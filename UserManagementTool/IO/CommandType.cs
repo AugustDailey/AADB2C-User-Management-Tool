@@ -4,8 +4,11 @@ using System.Text;
 
 namespace UserManagementTool.IO
 {
-    public interface IUserInputManager
+    public enum CommandType
     {
-        UserInputResult Handle(string[] input);
+        Create,
+        Read,
+        Update,
+        Delete
     }
 }

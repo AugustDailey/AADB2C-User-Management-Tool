@@ -4,11 +4,11 @@ using System.Text;
 
 namespace UserManagementTool.IO
 {
-    public class UserInputManager : IUserInputManager
+    public class Command : ICommand
     {
-        public UserInputResult Handle(string[] input)
+        public CommandResult Execute()
         {
-            return null;
+            throw new NotImplementedException();
         }
     }
 }

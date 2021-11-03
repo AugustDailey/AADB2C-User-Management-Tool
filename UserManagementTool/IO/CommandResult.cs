@@ -4,8 +4,7 @@ using System.Text;
 
 namespace UserManagementTool.IO
 {
-    public interface IUserInputManager
+    public class CommandResult
     {
-        UserInputResult Handle(string[] input);
     }
 }
