@@ -6,6 +6,7 @@ namespace UserManagementTool.IO
 {
     public interface ICommand
     {
+        bool IsValid();
         CommandResult Execute();
     }
 }

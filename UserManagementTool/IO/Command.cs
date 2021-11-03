@@ -10,5 +10,10 @@ namespace UserManagementTool.IO
         {
             throw new NotImplementedException();
         }
+
+        public bool IsValid()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
