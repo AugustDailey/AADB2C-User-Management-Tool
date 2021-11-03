@@ -23,6 +23,7 @@ namespace UserManagementTool.IO
                 return new UserInputResult();
             }
             var result = command.Execute();
+            return new UserInputResult();
 
         }
     }
