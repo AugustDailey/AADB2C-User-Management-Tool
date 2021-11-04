@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using UserManagementTool.Command;
+using UserManagementTool.Services;
 
 namespace UserManagementTool.IO
 {
@@ -9,10 +10,12 @@ namespace UserManagementTool.IO
     {
 
         private Dictionary<string, CommandType> CommandMappings { get; set; }
+        public IMicrosftGraphApiAdapterService MicrosoftGraphApiAdapterService { get; }
 
-        public CommandBuilder()
+        public CommandBuilder(IMicrosftGraphApiAdapterService microsoftGraphApiAdapterService)
         {
             InitializeMappings();
+            MicrosoftGraphApiAdapterService = microsoftGraphApiAdapterService;
         }
 
         public void InitializeMappings()
@@ -29,6 +32,11 @@ namespace UserManagementTool.IO
         {
             if (!CommandMappings.TryGetValue(args[0], out var commandType)) {
                 return null;
+            }
+
+            if (commandType.Equals(CommandType.Create))
+            {
+                return new CreateUserCommand(MicrosoftGraphApiAdapterService);
             }
 
             return new DefaultCommand();
