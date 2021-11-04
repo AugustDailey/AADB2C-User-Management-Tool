@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UserManagementTool.IO
+namespace UserManagementTool.Command
 {
-    public class Command : ICommand
+    public class DefaultCommand : ICommand
     {
         public CommandResult Execute()
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public bool IsValid()
         {
-            throw new NotImplementedException();
+            return false;
         }
     }
 }

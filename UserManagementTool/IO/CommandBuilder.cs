@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using UserManagementTool.Command;
 
 namespace UserManagementTool.IO
 {
@@ -30,7 +31,7 @@ namespace UserManagementTool.IO
                 return null;
             }
 
-            return new Command();
+            return new DefaultCommand();
         }
     }
 }

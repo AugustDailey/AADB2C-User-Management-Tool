@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UserManagementTool.IO
+namespace UserManagementTool.Command
 {
     public enum CommandType
     {
