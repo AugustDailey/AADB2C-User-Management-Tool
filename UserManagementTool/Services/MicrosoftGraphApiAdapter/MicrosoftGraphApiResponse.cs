@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UserManagementTool.Services
+namespace UserManagementTool.Services.MicrosoftGraphApiAdapter
 {
     public class MicrosoftGraphApiResponse
     {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using UserManagementTool.Command;
 using UserManagementTool.Services;
+using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool.IO
 {
@@ -35,19 +36,19 @@ namespace UserManagementTool.IO
 
             if (commandType.Equals(CommandType.Create))
             {
-                return new CreateUserCommand(MicrosoftGraphApiAdapterService);
+                return new CreateUserCommand(MicrosoftGraphApiAdapterService, new Dictionary<string, object>());
             }
             else if (commandType.Equals(CommandType.Read))
             {
-                return new ReadUserCommand(MicrosoftGraphApiAdapterService);
+                return new ReadUserCommand(MicrosoftGraphApiAdapterService, "");
             }
             else if (commandType.Equals(CommandType.Update))
             {
-                return new UpdateUserCommand(MicrosoftGraphApiAdapterService);
+                return new UpdateUserCommand(MicrosoftGraphApiAdapterService, "", new Dictionary<string, object>());
             }
             else if (commandType.Equals(CommandType.Delete))
             {
-                return new DeleteUserCommand(MicrosoftGraphApiAdapterService);
+                return new DeleteUserCommand(MicrosoftGraphApiAdapterService, "");
             }
 
             return new DefaultCommand();

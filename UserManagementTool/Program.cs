@@ -3,6 +3,8 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
 using UserManagementTool.App;
+using UserManagementTool.Services.Configuration;
+using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool
 {
@@ -31,6 +33,9 @@ namespace UserManagementTool
             // Add binded services
             serviceCollection.AddSingleton<IConfiguration>(configuration);
             serviceCollection.AddScoped<IApplication, Application>();
+
+            serviceCollection.AddSingleton<IConfigurationService, ConfigurationService>();
+            serviceCollection.AddSingleton<IMicrosftGraphApiAdapterService, MicrosoftGraphApiAdapterService>();
 
             // Build and return provider
             return serviceCollection.BuildServiceProvider();
