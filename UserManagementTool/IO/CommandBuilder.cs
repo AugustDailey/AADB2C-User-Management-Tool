@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using UserManagementTool.Command;
-using UserManagementTool.Services;
 using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool.IO

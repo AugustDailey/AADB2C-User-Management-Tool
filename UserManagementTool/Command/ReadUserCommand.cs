@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using UserManagementTool.Services;
 using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool.Command

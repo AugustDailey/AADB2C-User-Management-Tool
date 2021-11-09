@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using UserManagementTool.Command;
+﻿using UserManagementTool.Command;
 
 namespace UserManagementTool.IO
 {

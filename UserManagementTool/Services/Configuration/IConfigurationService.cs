@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace UserManagementTool.Services.Configuration
+﻿namespace UserManagementTool.Services.Configuration
 {
     public interface IConfigurationService
     {
