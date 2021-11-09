@@ -4,6 +4,7 @@ using System;
 using System.IO;
 using UserManagementTool.App;
 using UserManagementTool.Services.Configuration;
+using UserManagementTool.Services.Messaging;
 using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool
@@ -36,6 +37,7 @@ namespace UserManagementTool
 
             serviceCollection.AddSingleton<IConfigurationService, ConfigurationService>();
             serviceCollection.AddSingleton<IMicrosftGraphApiAdapterService, MicrosoftGraphApiAdapterService>();
+            serviceCollection.AddSingleton<IMessagingService, MessagingService>();
 
             // Build and return provider
             return serviceCollection.BuildServiceProvider();
