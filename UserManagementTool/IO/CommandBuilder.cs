@@ -38,6 +38,10 @@ namespace UserManagementTool.IO
             {
                 return new CreateUserCommand(MicrosoftGraphApiAdapterService);
             }
+            else if (commandType.Equals(CommandType.Read))
+            {
+                return new ReadUserCommand(MicrosoftGraphApiAdapterService);
+            }
 
             return new DefaultCommand();
         }
