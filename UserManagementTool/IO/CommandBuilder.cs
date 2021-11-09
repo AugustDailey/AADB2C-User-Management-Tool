@@ -27,7 +27,6 @@ namespace UserManagementTool.IO
             CommandMappings.Add("delete", CommandType.Delete);
         }
 
-
         public ICommand Build(string[] args)
         {
             if (!CommandMappings.TryGetValue(args[0], out var commandType)) {

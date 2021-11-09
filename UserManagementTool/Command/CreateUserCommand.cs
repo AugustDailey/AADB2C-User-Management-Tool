@@ -7,21 +7,25 @@ namespace UserManagementTool.Command
 {
     public class CreateUserCommand : ICommand
     {
-        public IMicrosftGraphApiAdapterService MicrosoftGraphApiAdapterService { get; }
-        public CreateUserCommand(IMicrosftGraphApiAdapterService microsoftGraphApiAdapterService)
+        private IMicrosftGraphApiAdapterService MicrosoftGraphApiAdapterService { get; }
+        private Dictionary<string, object> UserAttributes { get; set; }
+
+        public CreateUserCommand(IMicrosftGraphApiAdapterService microsoftGraphApiAdapterService, Dictionary<string, object> attributes)
         {
             MicrosoftGraphApiAdapterService = microsoftGraphApiAdapterService;
-        }
 
+            UserAttributes = attributes;
+        }
 
         public CommandResult Execute()
         {
             throw new NotImplementedException();
         }
 
+        // TODO: Make this more robust
         public bool IsValid()
         {
-            throw new NotImplementedException();
+            return UserAttributes.ContainsKey("signInNames");
         }
     }
 }

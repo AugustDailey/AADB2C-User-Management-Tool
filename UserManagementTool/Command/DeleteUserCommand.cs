@@ -8,10 +8,14 @@ namespace UserManagementTool.Command
     public class DeleteUserCommand : ICommand
     {
         private IMicrosftGraphApiAdapterService MicrosftGraphApiAdapterService { get; }
+        
+        private string ObjectId { get; set; }
 
-        public DeleteUserCommand(IMicrosftGraphApiAdapterService microsftGraphApiAdapterService)
+        public DeleteUserCommand(IMicrosftGraphApiAdapterService microsftGraphApiAdapterService, string objectId)
         {
             MicrosftGraphApiAdapterService = microsftGraphApiAdapterService;
+
+            ObjectId = objectId;
         }
 
         public CommandResult Execute()
@@ -21,7 +25,7 @@ namespace UserManagementTool.Command
 
         public bool IsValid()
         {
-            throw new NotImplementedException();
+            return !string.IsNullOrWhiteSpace(ObjectId);
         }
     }
 }

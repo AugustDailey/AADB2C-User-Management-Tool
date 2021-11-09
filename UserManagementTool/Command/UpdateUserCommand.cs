@@ -9,9 +9,16 @@ namespace UserManagementTool.Command
     {
         private IMicrosftGraphApiAdapterService MicrosftGraphApiAdapterService { get; }
 
-        public UpdateUserCommand(IMicrosftGraphApiAdapterService microsftGraphApiAdapterService)
+        private string ObjectId { get; set; }
+        private Dictionary<string, object> UserAttributes { get; set; }
+
+        public UpdateUserCommand(IMicrosftGraphApiAdapterService microsftGraphApiAdapterService, string objectId, 
+            Dictionary<string, object> attributes)
         {
             MicrosftGraphApiAdapterService = microsftGraphApiAdapterService;
+
+            ObjectId = objectId;
+            UserAttributes = attributes;
         }
 
         public CommandResult Execute()
@@ -21,7 +28,7 @@ namespace UserManagementTool.Command
 
         public bool IsValid()
         {
-            throw new NotImplementedException();
+            return !string.IsNullOrWhiteSpace(ObjectId) && UserAttributes.Keys.Count > 0;
         }
     }
 }

@@ -9,9 +9,13 @@ namespace UserManagementTool.Command
     {
         private IMicrosftGraphApiAdapterService MicrosftGraphApiAdapterService { get; }
 
-        public ReadUserCommand(IMicrosftGraphApiAdapterService microsftGraphApiAdapterService)
+        private string ObjectId { get; set; }
+
+        public ReadUserCommand(IMicrosftGraphApiAdapterService microsftGraphApiAdapterService, string objectId)
         {
             MicrosftGraphApiAdapterService = microsftGraphApiAdapterService;
+
+            ObjectId = objectId;
         }
 
         public CommandResult Execute()
@@ -21,7 +25,7 @@ namespace UserManagementTool.Command
 
         public bool IsValid()
         {
-            throw new NotImplementedException();
+            return !string.IsNullOrWhiteSpace(ObjectId);
         }
     }
 }
