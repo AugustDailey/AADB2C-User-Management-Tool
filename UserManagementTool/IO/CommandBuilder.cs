@@ -42,6 +42,14 @@ namespace UserManagementTool.IO
             {
                 return new ReadUserCommand(MicrosoftGraphApiAdapterService);
             }
+            else if (commandType.Equals(CommandType.Update))
+            {
+                return new UpdateUserCommand(MicrosoftGraphApiAdapterService);
+            }
+            else if (commandType.Equals(CommandType.Delete))
+            {
+                return new DeleteUserCommand(MicrosoftGraphApiAdapterService);
+            }
 
             return new DefaultCommand();
         }
