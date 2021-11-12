@@ -19,7 +19,7 @@ namespace UserManagementTool.Services.Messaging
 
         public string AppVersionPrefix()
         {
-            return "***********************";
+            return "      ***********************      ";
         }
 
         public string Author()
@@ -34,12 +34,12 @@ namespace UserManagementTool.Services.Messaging
 
         public string Greeting()
         {
-            return "Welcome to the AADB2C User Management Tool! You can use this application to manage your users hosted within Azure Active Directory B2C instances. This command line tool offers functionality such as creating, reading, modifying, and deleting users through different commands. Type \"--help\" to get a full list of available commands.";
+            return "Welcome to the AADB2C User Management Tool! You can use this application to manage your users hosted within Azure \nActive Directory B2C instances. This command line tool offers functionality such as creating, reading, modifying, \nand deleting users through different commands. Type \"--help\" to get a full list of available commands.";
         }
 
         public string NewOpChars()
         {
-            return ">";
+            return "> ";
         }
     }
 }
