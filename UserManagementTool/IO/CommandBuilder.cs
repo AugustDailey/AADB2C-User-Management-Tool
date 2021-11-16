@@ -23,6 +23,7 @@ namespace UserManagementTool.IO
             CommandMappings.Add("read", CommandType.Read);
             CommandMappings.Add("update", CommandType.Update);
             CommandMappings.Add("delete", CommandType.Delete);
+            CommandMappings.Add("quit", CommandType.Quit);
         }
 
         public ICommand Build(string[] args)
@@ -46,6 +47,10 @@ namespace UserManagementTool.IO
             else if (commandType.Equals(CommandType.Delete))
             {
                 return new DeleteUserCommand(MicrosoftGraphApiAdapterService, "");
+            }
+            else if (commandType.Equals(CommandType.Quit))
+            {
+                return new QuitCommand();
             }
 
             return new DefaultCommand();

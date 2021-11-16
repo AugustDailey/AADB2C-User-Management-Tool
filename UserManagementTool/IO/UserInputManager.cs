@@ -13,7 +13,7 @@
             NormalizeInput(input);
             var command = CommandBuilder.Build(input);
 
-            if (command.IsValid())
+            if (!command.IsValid())
             {
                 // TODO: Make this an error result
                 return new UserInputResult();
@@ -21,7 +21,8 @@
             var result = command.Execute();
             return new UserInputResult()
             {
-                Result = result.Result
+                Result = result.Result,
+                Action = result.Action
             };
         }
 
