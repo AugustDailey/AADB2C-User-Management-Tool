@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool.Command
@@ -18,7 +17,10 @@ namespace UserManagementTool.Command
 
         public CommandResult Execute()
         {
-            throw new NotImplementedException();
+            return new CommandResult()
+            {
+                Result = "Successfully created user"
+            };
         }
 
         // TODO: Make this more robust

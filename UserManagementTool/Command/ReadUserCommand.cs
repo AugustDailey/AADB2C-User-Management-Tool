@@ -1,5 +1,4 @@
-﻿using System;
-using UserManagementTool.Services.MicrosoftGraphApiAdapter;
+﻿using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool.Command
 {
@@ -18,7 +17,10 @@ namespace UserManagementTool.Command
 
         public CommandResult Execute()
         {
-            throw new NotImplementedException();
+            return new CommandResult()
+            {
+                Result = "Successfully read user"
+            };
         }
 
         public bool IsValid()
