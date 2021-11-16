@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace UserManagementTool.Services.Messaging
+﻿namespace UserManagementTool.Services.Messaging
 {
     public class MessagingService : IMessagingService
     {
         // TODO: Change this to read from a file containing messaging
-        public MessagingService()
-        {
-
-        }
-
         public string AppVersion()
         {
             return "AADB2C User Management Tool v0.1.0";

@@ -25,7 +25,6 @@ namespace UserManagementTool.Services.MicrosoftGraphApiAdapter
             Scope = configurationService.GraphApiScope();
         }
 
-
         public MicrosoftGraphApiResponse CreateUser(Dictionary<string, object> attributes)
         {
             throw new NotImplementedException();

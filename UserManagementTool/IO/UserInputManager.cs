@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace UserManagementTool.IO
+﻿namespace UserManagementTool.IO
 {
     public class UserInputManager : IUserInputManager
     {
@@ -9,7 +7,6 @@ namespace UserManagementTool.IO
         {
             CommandBuilder = commandBuidler;
         }
-
 
         public UserInputResult Handle(string[] input)
         {
@@ -26,7 +23,6 @@ namespace UserManagementTool.IO
             {
                 Result = result.Result
             };
-
         }
 
         private void NormalizeInput(string[] input)

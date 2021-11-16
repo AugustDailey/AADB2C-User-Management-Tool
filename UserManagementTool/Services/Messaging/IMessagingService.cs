@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace UserManagementTool.Services.Messaging
+﻿namespace UserManagementTool.Services.Messaging
 {
     public interface IMessagingService
     {

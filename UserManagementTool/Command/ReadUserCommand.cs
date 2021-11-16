@@ -1,5 +1,4 @@
-﻿using System;
-using UserManagementTool.Services.MicrosoftGraphApiAdapter;
+﻿using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool.Command
 {
