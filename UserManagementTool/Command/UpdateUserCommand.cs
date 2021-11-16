@@ -22,7 +22,10 @@ namespace UserManagementTool.Command
 
         public CommandResult Execute()
         {
-            throw new NotImplementedException();
+            return new CommandResult()
+            {
+                Result = "Successfully updated user"
+            };
         }
 
         public bool IsValid()

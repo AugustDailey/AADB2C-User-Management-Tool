@@ -19,7 +19,10 @@
                 return new UserInputResult();
             }
             var result = command.Execute();
-            return new UserInputResult();
+            return new UserInputResult()
+            {
+                Result = result.Result
+            };
 
         }
     }

@@ -3,6 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.IO;
 using UserManagementTool.App;
+using UserManagementTool.IO;
 using UserManagementTool.Services.Configuration;
 using UserManagementTool.Services.Messaging;
 using UserManagementTool.Services.MicrosoftGraphApiAdapter;
@@ -36,6 +37,8 @@ namespace UserManagementTool
             serviceCollection.AddScoped<IApplication, Application>();
 
             serviceCollection.AddSingleton<IConfigurationService, ConfigurationService>();
+            serviceCollection.AddSingleton<IUserInputManager, UserInputManager>();
+            serviceCollection.AddSingleton<ICommandBuilder, CommandBuilder>();
             serviceCollection.AddSingleton<IMicrosftGraphApiAdapterService, MicrosoftGraphApiAdapterService>();
             serviceCollection.AddSingleton<IMessagingService, MessagingService>();
 

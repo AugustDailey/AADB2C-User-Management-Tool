@@ -18,7 +18,10 @@ namespace UserManagementTool.Command
 
         public CommandResult Execute()
         {
-            throw new NotImplementedException();
+            return new CommandResult()
+            {
+                Result = "Successfully deleted user"
+            };
         }
 
         public bool IsValid()

@@ -1,4 +1,5 @@
 ﻿using System;
+using UserManagementTool.IO;
 using UserManagementTool.Services.Messaging;
 
 namespace UserManagementTool.App
@@ -6,9 +7,12 @@ namespace UserManagementTool.App
     public class Application : IApplication
     {
         private IMessagingService MessagingService { get; }
-        public Application(IMessagingService messagingService)
+        private IUserInputManager UserInputManager { get; }
+
+        public Application(IMessagingService messagingService, IUserInputManager userInputManager)
         {
             MessagingService = messagingService;
+            UserInputManager = userInputManager;
         }
 
 
@@ -21,8 +25,23 @@ namespace UserManagementTool.App
             Console.WriteLine();
             Console.WriteLine(MessagingService.Greeting());
             Console.WriteLine();
-            Console.Write(MessagingService.NewOpChars());
-            Console.ReadLine();
+            while (true)
+            {
+                Console.Write(MessagingService.NewOpChars());
+
+                // Prepare the input
+                var input = Console.ReadLine();
+                var args = input.Split(" ");
+
+                // Handle the input
+                var result = UserInputManager.Handle(args);
+
+                // Print result
+                Console.WriteLine();
+                Console.WriteLine(result.Result);
+                Console.WriteLine();
+            }
+            
         }
     }
 
