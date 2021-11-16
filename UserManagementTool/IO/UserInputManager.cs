@@ -1,4 +1,6 @@
-﻿namespace UserManagementTool.IO
+﻿using System.Linq;
+
+namespace UserManagementTool.IO
 {
     public class UserInputManager : IUserInputManager
     {
@@ -11,6 +13,7 @@
 
         public UserInputResult Handle(string[] input)
         {
+            NormalizeInput(input);
             var command = CommandBuilder.Build(input);
 
             if (command.IsValid())
@@ -24,6 +27,14 @@
                 Result = result.Result
             };
 
+        }
+
+        private void NormalizeInput(string[] input)
+        {
+            for(int i = 0; i < input.Length; i++)
+            {
+                input[i] = input[i].ToLower();
+            }
         }
     }
 }
