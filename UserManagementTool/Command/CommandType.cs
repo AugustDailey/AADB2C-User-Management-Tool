@@ -5,6 +5,7 @@
         Create,
         Read,
         Update,
-        Delete
+        Delete,
+        Quit
     }
 }

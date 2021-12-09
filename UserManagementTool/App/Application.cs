@@ -1,4 +1,5 @@
 ﻿using System;
+using UserManagementTool.Command;
 using UserManagementTool.IO;
 using UserManagementTool.Services.Messaging;
 
@@ -9,10 +10,14 @@ namespace UserManagementTool.App
         private IMessagingService MessagingService { get; }
         private IUserInputManager UserInputManager { get; }
 
+        private bool Running { get; set; }
+
         public Application(IMessagingService messagingService, IUserInputManager userInputManager)
         {
             MessagingService = messagingService;
             UserInputManager = userInputManager;
+
+            Running = true;
         }
 
 
@@ -25,7 +30,7 @@ namespace UserManagementTool.App
             Console.WriteLine();
             Console.WriteLine(MessagingService.Greeting());
             Console.WriteLine();
-            while (true)
+            while (Running)
             {
                 Console.Write(MessagingService.NewOpChars());
 
@@ -36,12 +41,37 @@ namespace UserManagementTool.App
                 // Handle the input
                 var result = UserInputManager.Handle(args);
 
-                // Print result
-                Console.WriteLine();
-                Console.WriteLine(result.Result);
-                Console.WriteLine();
+                switch(result.Action)
+                {
+                    case ResultAction.Print:
+                        Print(result.Result);
+                        break;
+
+                    case ResultAction.Quit:
+                        Quit();
+                        break;
+
+                    default:
+                        break;
+                }
             }
-            
+        }
+
+        private void Print(string output)
+        {
+            // Print result
+            Console.WriteLine();
+            Console.WriteLine(output);
+            Console.WriteLine();
+        }
+
+        private void Quit()
+        {
+            // Print result
+            Console.WriteLine();
+            Console.WriteLine("Application shutting down...");
+            Console.WriteLine();
+            Running = false;
         }
     }
 
