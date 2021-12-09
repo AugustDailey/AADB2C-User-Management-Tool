@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Services.TenantConfiguration;
+using System;
 using UserManagementTool.IO;
-using UserManagementTool.Models;
 using UserManagementTool.Services.MicrosoftGraphApiAdapter;
 
 namespace UserManagementTool.Command

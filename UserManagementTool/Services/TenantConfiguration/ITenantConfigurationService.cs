@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using UserManagementTool.Models;
 
-namespace UserManagementTool.IO
+namespace Services.TenantConfiguration
 {
     public interface ITenantConfigurationService
     {
-        TenantConfiguration Load(string id);
+        TenantConfiguration Load(string name);
         List<TenantConfiguration> LoadAll();
         bool Save(TenantConfiguration configuration);
     }

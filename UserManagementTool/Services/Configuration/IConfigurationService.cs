@@ -6,5 +6,7 @@
         string GraphApiClientSecret();
         string GraphApiDirectoryId();
         string GraphApiScope();
+        string TenantConfigurationDirectory();
+        string TenantConfigurationDelimiter();
     }
 }

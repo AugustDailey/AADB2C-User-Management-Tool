@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using UserManagementTool.Models;
+﻿using Services.TenantConfiguration;
+using System.Collections.Generic;
 
 namespace UserManagementTool.Services.MicrosoftGraphApiAdapter
 {

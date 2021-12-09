@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace UserManagementTool.Models
+namespace Services.TenantConfiguration
 {
     public class TenantConfiguration
     {

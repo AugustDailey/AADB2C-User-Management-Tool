@@ -31,5 +31,10 @@ namespace UserManagementTool.Services.Configuration
         {
             return Configuration.GetSection("GraphApiScope").Value;
         }
+
+        public string TenantConfigurationDirectory()
+        {
+            return Configuration.GetSection("TenantConfigurationDirectory").Value;
+        }
     }
 }
