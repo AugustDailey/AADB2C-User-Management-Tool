@@ -32,5 +32,25 @@ namespace UserManagementTool.IO
                 return false;
             }
         }
+
+        public List<string[]> ReadAll(string directory)
+        {
+            List<string[]> configurations = new List<string[]>();
+
+            try
+            {
+                var files = Directory.GetFiles(directory);
+                foreach(var file in files)
+                {
+                    var content = File.ReadAllLines(file);
+                    configurations.Add(content);
+                }
+            }
+            catch (Exception e)
+            {
+            }
+
+            return configurations;
+        }
     }
 }

@@ -28,7 +28,14 @@ namespace Services.TenantConfiguration
 
         public List<TenantConfiguration> LoadAll()
         {
-            throw new NotImplementedException();
+            var outputs = FileServce.ReadAll(TenantConfigurationDirectory);
+            var configurations = new List<TenantConfiguration>();
+            foreach(var output in outputs)
+            {
+                configurations.Add(Parse(output));
+            }
+
+            return configurations;
         }
 
         public bool Save(TenantConfiguration configuration)
